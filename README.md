@@ -1,4 +1,4 @@
-# ToreInflux
+# ThoreInflux
 
 *A digital construct — blog, portfolio & progress log, rendered in code.*
 
