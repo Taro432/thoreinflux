@@ -6,7 +6,7 @@
 ![Theme](https://img.shields.io/badge/Theme-Dark%20Matrix-000000?style=flat-square)
 ![Mode](https://img.shields.io/badge/Mode-Construct_Live-00ff00?style=flat-square)
 
----
+--
 
 ## Welcome to the Construct 🕶️
 
