@@ -1,76 +1,125 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ThoreInflux | Matrix Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Share Tech Mono', monospace;
+      background: black;
+      color: #00ff00;
+      overflow-x: hidden;
+    }header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(0, 255, 0, 0.05);
+  border-bottom: 1px solid #0f0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #0f0;
+}
+
+section {
+  padding: 2rem;
+  border-bottom: 1px dashed #0f0;
+}
+
+h2 {
+  border-left: 4px solid #0f0;
+  padding-left: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+input, textarea, button {
+  background: black;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 0.5rem;
+  font-family: inherit;
+}
+
+button:hover {
+  background: #0f0;
+  color: black;
+  cursor: pointer;
+}
+
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+  </style>
 </head>
 <body>
   <canvas id="matrix"></canvas>
-
   <header>
     <h1>Welcome to ThoreInflux</h1>
     <p>My digital realm – Blog, Training & Projects</p>
-  </header>
-
-  <section>
+  </header>  <section>
     <h2>Training Log</h2>
     <p>I'll share my weekly progress, achievements and thoughts around my training here.</p>
-  </section>
-
-  <section>
+  </section>  <section>
     <h2>Portfolio</h2>
     <p>Showcasing selected works, projects and digital experiments.</p>
-  </section>
-
-  <section>
+  </section>  <section>
     <h2>Guestbook</h2>
-    <button>Sign Guestbook</button>
-  </section>
-
-  <section>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <textarea rows="4" placeholder="Leave a message..." required></textarea>
+      <button type="submit">Sign Guestbook</button>
+    </form>
+  </section>  <section>
     <h2>Contact Me</h2>
-    <button>Send Message</button>
-  </section>
-
-  <section>
+    <form>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your message..." required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>  <section>
     <h2>Updates</h2>
     <p>News, announcements and milestones will be posted here.</p>
-  </section>
-
-  <script>
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
+  </section>  <script>
+    // Matrix background effect
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
 
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
-    const letters = 'アァイィウヴエェオカガキギクグケゲコゴサザシジスズセゼソゾタダチヂッツヅテデトドナニヌネノハバパヒビピフブプヘベペホボポマミムメモヤユヨラリルレロワン0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
+    let letters = Array(256).join("1").split("");
 
-    const drops = Array(Math.floor(columns)).fill(1);
-
-    function draw() {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    const draw = () => {
+      ctx.fillStyle = "rgba(0,0,0,0.05)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = '#0F0';
-      ctx.font = fontSize + 'px Share Tech Mono';
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = letters.charAt(Math.floor(Math.random() * letters.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-
-        drops[i]++;
-      }
-    }
+      ctx.fillStyle = "#0f0";
+      letters.map((y_pos, index) => {
+        const text = String.fromCharCode(3e4 + Math.random() * 33);
+        const x_pos = index * 10;
+        ctx.fillText(text, x_pos, y_pos);
+        letters[index] = y_pos > 758 + Math.random() * 1e4 ? 0 : y_pos + 10;
+      });
+    };
 
     setInterval(draw, 33);
 
@@ -78,6 +127,5 @@
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
     });
-  </script>
-</body>
+  </script></body>
 </html>
