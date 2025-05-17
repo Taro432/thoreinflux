@@ -1,4 +1,4 @@
-# Contributing to ThoreInflux
+# ThoreInflux | CONTRIBUTING.md
 
 *A digital construct — open to collaboration, feedback & digital tinkering.*
 
