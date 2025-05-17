@@ -1,1 +1,3 @@
-
+$ status
+> The Construct is still initializing...
+> Awaiting first full deployment.
