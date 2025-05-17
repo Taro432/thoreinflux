@@ -1,12 +1,5 @@
-/* 
-  style.css — ThoreInflux Matrix Portfolio
-  Author: Thore Haskamp
-  Description: Matrix-themed static portfolio styling
-  Repository: https://github.com/taro432/thoreinflux
-  Live Site: https://taro432.github.io/thoreinflux/
-*/
+/* style.css — ThoreInflux Matrix Portfolio */
 
-/* === Global Styles === */
 canvas#matrix {
   position: fixed;
   top: 0;
@@ -15,6 +8,7 @@ canvas#matrix {
   height: 100%;
   z-index: -1;
 }
+
 body {
   margin: 0;
   font-family: 'Share Tech Mono', monospace;
@@ -23,7 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-/* === Header === */
 header {
   text-align: center;
   padding: 3rem 1rem;
@@ -39,37 +32,28 @@ header h1 {
 header p {
   font-size: 1.2rem;
   margin-top: 0.5rem;
-  color: #00ff00;
 }
 
-/* === Footer === */
-footer {
-  text-align: center;
+section {
   padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #0f0;
-  border-top: 1px solid #0f0;
-  background: rgba(0, 255, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 255, 0, 0.2);
 }
 
-/* === Links === */
-a {
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+button {
+  background-color: transparent;
+  border: 1px solid #00ff00;
   color: #00ff00;
-  text-decoration: none;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-/* === Optional: Terminal Blinking Cursor Effect === */
-.terminal-text::after {
-  content: "_";
-  animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
+button:hover {
+  background-color: rgba(0, 255, 0, 0.1);
 }
