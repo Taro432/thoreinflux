@@ -5,16 +5,16 @@
   const successAudio = document.getElementById('success-sound');
   const backgroundAudio = document.getElementById('background-sound');
 
-  // Autoplay background music on first user interaction
+  // Autoplay background music 
   document.addEventListener('click', () => {
-    if (backgroundAudio && backgroundAudio.paused) {
-      backgroundAudio.volume = 0.5;
-      backgroundAudio.play().catch(err => {
-        console.warn('Background music autoplay failed:', err);
-      });
-    }
-  }, { once: true });
-
+  window.addEventListener('load', () => {
+  if (backgroundAudio && backgroundAudio.paused) {
+    backgroundAudio.volume = 0.5;
+    backgroundAudio.play().catch(err => {
+      console.warn('Background music autoplay failed:', err);
+    });
+  }
+});
   // Handle form submission
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent default form behavior
