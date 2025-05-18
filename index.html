@@ -4,7 +4,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ThoreInflux | Matrix Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <style>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/script.js"></script>
+    <style>
     body {
       margin: 0;
       font-family: 'Share Tech Mono', monospace;
@@ -72,19 +74,24 @@ button:hover {
   </style>
 </head>
 <body>
+  <audio id="background-sound" src="assets/sounds/Extra Terra - Morpheus.mp3" preload="auto" loop></audio>
   <canvas id="matrix"></canvas>
+
   <header>
     <h1>Welcome to ThoreInflux</h1>
     <p>My digital realm – Blog, Training & Projects</p>
   </header>  
+
   <section>
     <h2>Training Log</h2>
     <p>I'll share my weekly progress, achievements and thoughts around my training here.</p>
   </section>  
+
   <section>
     <h2>Portfolio</h2>
     <p>Showcasing selected works, projects and digital experiments.</p>
   </section>  
+
   <section>
     <h2>Guestbook</h2>
     <form>
@@ -92,19 +99,20 @@ button:hover {
       <textarea rows="4" placeholder="Leave a message..." required></textarea>
       <button type="submit">Sign Guestbook</button>
     </form>
-  </section>  
-  <section>
+  </section>
+
+  <section id="contact">
     <h2>Contact Me</h2>
-    <form>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your message..." required></textarea>
-      <button type="submit">Send Message</button>
+    <form id="contact-form" action="your-form-endpoint" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+      <button type="submit">Send</button>
     </form>
-  </section>  
-  <section>
-    <h2>Updates</h2>
-    <p>News, announcements and milestones will be posted here.</p>
-  </section>  
+    <p id="success-msg" class="hidden">Thank you for your message!</p>
+    <audio id="success-sound" src="assets/sounds/assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav preload="auto"></audio>
+  </section>
+</body>
   <script>
     // Matrix background effect
     const canvas = document.getElementById("matrix");
@@ -134,5 +142,92 @@ button:hover {
       canvas.height = window.innerHeight;
     });
   </script>
+  <script>
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('form-success');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        form.reset();
+      } else {
+        successMessage.textContent = 'Something went wrong. Please try again.';
+        successMessage.style.color = 'red';
+        successMessage.style.display = 'block';
+      }
+    }).catch(() => {
+      successMessage.textContent = 'Something went wrong. Please try again.';
+      successMessage.style.color = 'red';
+      successMessage.style.display = 'block';
+    });
+  });
+</script>
+<script>
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('form-success');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        successMessage.style.display = 'block';
+        form.reset();
+      } else {
+        successMessage.textContent = 'Something went wrong. Please try again.';
+        successMessage.style.color = 'red';
+        successMessage.style.display = 'block';
+      }
+    }).catch(() => {
+      successMessage.textContent = 'Something went wrong. Please try again.';
+      successMessage.style.color = 'red';
+      successMessage.style.display = 'block';
+    });
+  });
+</script>
+<script>
+  const form = document.getElementById('contact-form');
+  const successMsg = document.getElementById('success-msg');
+  const sound = document.getElementById('success-sound');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        sound.play();
+        form.reset();
+        successMsg.classList.remove('hidden');
+        setTimeout(() => successMsg.classList.add('hidden'), 4000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (err) {
+      alert('Network error.');
+    }
+  });
+</script>
 </body>
 </html>
