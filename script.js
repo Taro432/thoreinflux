@@ -1,5 +1,5 @@
 <script>
-  // Contact form handling
+  // Get elements from the DOM
   const form = document.getElementById('contact-form');
   const successMessage = document.getElementById('success-msg');
   const successAudio = document.getElementById('success-sound');
@@ -15,8 +15,9 @@
     }
   }, { once: true });
 
+  // Handle form submission
   form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); // Prevent default form behavior
 
     const data = new FormData(form);
 
@@ -34,19 +35,21 @@
         form.reset();
 
         if (successAudio) {
+          successAudio.volume = 1.0;
           successAudio.play().catch(err => {
-            console.warn('Success sound failed:', err);
+            console.warn('Success sound failed to play:', err);
           });
         }
       } else {
-        successMessage.textContent = 'Something went wrong. Please try again.';
-        successMessage.style.color = 'red';
         successMessage.style.display = 'block';
+        successMessage.style.color = '#f00';
+        successMessage.textContent = 'Something went wrong. Please try again.';
       }
     }).catch(error => {
-      successMessage.textContent = 'There was an error. Please try again later.';
-      successMessage.style.color = 'red';
+      console.error('Form submission error:', error);
       successMessage.style.display = 'block';
+      successMessage.style.color = '#f00';
+      successMessage.textContent = 'Something went wrong. Please try again.';
     });
   });
 </script>
