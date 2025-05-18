@@ -5,16 +5,16 @@
   const successAudio = document.getElementById('success-sound');
   const backgroundAudio = document.getElementById('background-sound');
 
-  // Autoplay background music 
-  document.addEventListener('click', () => {
+  // Play background music when page loads
   window.addEventListener('load', () => {
-  if (backgroundAudio && backgroundAudio.paused) {
-    backgroundAudio.volume = 0.5;
-    backgroundAudio.play().catch(err => {
-      console.warn('Background music autoplay failed:', err);
-    });
-  }
-});
+    if (backgroundAudio && backgroundAudio.paused) {
+      backgroundAudio.volume = 0.5;
+      backgroundAudio.play().catch(err => {
+        console.warn('Background music autoplay failed:', err);
+      });
+    }
+  });
+
   // Handle form submission
   form.addEventListener('submit', function (e) {
     e.preventDefault(); // Prevent default form behavior
@@ -37,19 +37,19 @@
         if (successAudio) {
           successAudio.volume = 1.0;
           successAudio.play().catch(err => {
-            console.warn('Success sound failed to play:', err);
+            console.warn('Success sound failed:', err);
           });
         }
       } else {
         successMessage.style.display = 'block';
         successMessage.style.color = '#f00';
-        successMessage.textContent = 'Something went wrong. Please try again.';
+        successMessage.textContent = 'Oops! Something went wrong.';
       }
     }).catch(error => {
       console.error('Form submission error:', error);
       successMessage.style.display = 'block';
       successMessage.style.color = '#f00';
-      successMessage.textContent = 'Something went wrong. Please try again.';
+      successMessage.textContent = 'An error occurred. Please try again.';
     });
   });
 </script>
