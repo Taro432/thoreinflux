@@ -80,20 +80,105 @@
     <audio id="background-sound" src="assets/sounds/Extra Terra - Morpheus.mp3" preload="auto" loop></audio>
     <canvas id="matrix"></canvas>
 
-    <header>
-      <h1 class="glow-heading">Welcome to ThoreInflux</h1>
-      <p>My digital realm – Blog, Training & Projects</p>
-    </header>
+<header>
+  <div class="header-container" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+    <h1 class="glow-heading" style="margin: 0;">Welcome to ThoreInflux</h1>
+    <button id="matrix-audio-btn" class="matrix-audio-btn" aria-label="Toggle background sound" style="background: none; border: none; padding: 0;">
+      <img src="assets/icons/media-player-music-music-symbol-svgrepo-com.svg" alt="Play/Stop Background Sound" style="height: 2.5rem;">
+    </button>
+  </div>
+  <p style="text-align: center;">My digital realm – Blog, Training & Projects</p>
+</header>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <pre id="typing-effect"></pre>
-    </section>
+<script>
+  const audioBtn = document.getElementById('matrix-audio-btn');
+  const audio = new Audio('assets/sounds/Extra Terra - Morpheus.mp3');
+  let isPlaying = false;
 
-    <section>
-      <h2>Training Log</h2>
-      <p>I'll share my weekly progress, achievements and thoughts around my training here.</p>
-    </section>
+  audioBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      audioBtn.classList.add('playing');
+      isPlaying = true;
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      audioBtn.classList.remove('playing');
+      isPlaying = false;
+    }
+  });
+</script>
+
+<section id="about">
+  <div class="section-header" style="display: flex; align-items: center; gap: 10px;">
+    <h2>About Me</h2>
+<button id="narrator-btn" class="aboutme-computer-btn">
+  <img src="assets/icons/computer-svgrepo-com.svg" alt="Read Text" />
+</button>
+  </div>
+  <div id="typing-text" class="hidden">
+    <pre id="typing-effect"></pre>
+  </div>
+</section>
+
+<script>
+  const text = `A techie with a passion for code, I'm currently continuing my education in web design, focusing on writing my own websites. I'm intensively familiarizing myself with HTML, CSS, JavaScript, and other tools relevant to modern web projects.
+
+I'm 29 years old, originally from Germany, and fluent in German and English. My affinity for technology, quick grasp, and genuine interest in digital trends have given me in-depth knowledge of PC hardware, software solutions, IT support, and artificial intelligence—including practical experience with current AI models.
+
+I enjoy working in a structured, independent, and solution-oriented manner—whether it's coding, troubleshooting, or creative thinking.
+
+In my free time, you'll find me at the gym, practicing martial arts, on my motorcycle, traveling, or following political issues. Always curious, always open to new ideas.`;
+
+  const btn = document.getElementById('narrator-btn');
+  const effectBox = document.getElementById('typing-effect');
+  const textContainer = document.getElementById('typing-text');
+  const typingSound = new Audio('assets/sounds/keyboard-typing-sound-effect-335503.mp3');
+  typingSound.loop = true;
+
+  let isTyping = false;
+
+  btn.addEventListener('click', async () => {
+    if (isTyping) return;
+    isTyping = true;
+    btn.classList.add('glow-active');
+    effectBox.textContent = '';
+    textContainer.classList.remove('hidden');
+    typingSound.currentTime = 0;
+    typingSound.play();
+
+    for (let i = 0; i < text.length; i++) {
+      effectBox.textContent += text[i];
+      await new Promise(resolve => setTimeout(resolve, 15));
+    }
+
+    typingSound.pause();
+    typingSound.currentTime = 0;
+    btn.classList.remove('glow-active');
+    isTyping = false;
+  });
+</script>
+
+<section style="background-color: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
+  <div class="section-header">
+    <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
+    <h2>Training Log</h2>
+  </div>
+
+  <p style="margin-top: 1rem;">
+    This past week, I focused heavily on refining the structure and design of this website. I implemented a Matrix-style background,
+    optimized the audio playback system, and ensured cross-browser compatibility.
+  </p>
+
+  <p>
+    I also practiced advanced CSS techniques like custom glowing effects, smoother transitions, and responsive styling.
+    A big win was creating a clean toggle for audio narration with visual feedback.
+  </p>
+
+  <p>
+    Next steps: improving accessibility, adding media queries for better mobile support, and maybe starting to build a portfolio section.
+  </p>
+</section>
 
     <section>
       <h2>Portfolio</h2>
@@ -123,6 +208,7 @@
   </form>
   <p id="guestbook-message" style="display:none; margin-top:10px; color:lime;">Thank you for your message. This feature is under construction.</p>
   <audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
+  </section>
 
   <script>
     const guestbookForm = document.getElementById('guestbook-form');
@@ -136,7 +222,6 @@
       guestbookMessage.style.display = 'block';
     });
   </script>
-</section>
 
 <section id="contact">
   <h2>Contact Me</h2>
@@ -198,31 +283,7 @@
 </script>
   </body>
 
-  <script>
-    const text = `A techie with a passion for code, I'm currently continuing my education in web design, focusing on writing my own websites. I'm intensively familiarizing myself with HTML, CSS, JavaScript, and other tools relevant to modern web projects.
-
-I'm 29 years old, originally from Germany, and fluent in German and English. My affinity for technology, quick grasp, and genuine interest in digital trends have given me in-depth knowledge of PC hardware, software solutions, IT support, and artificial intelligence—including practical experience with current AI models.
-
-I enjoy working in a structured, independent, and solution-oriented manner—whether it's coding, troubleshooting, or creative thinking.
-
-In my free time, you'll find me at the gym, practicing martial arts, on my motorcycle, traveling, or following political issues. Always curious, always open to new ideas.`;
-
-    let i = 0;
-    const speed = 25;
-    const target = document.getElementById('typing-effect');
-
-    function type() {
-      if (i < text.length) {
-        target.textContent += text.charAt(i);
-        i++;
-        setTimeout(type, speed);
-      }
-    }
-
-    window.addEventListener('load', type);
-  </script>
-
-  <script>
+<script>
     // Matrix background effect
     const canvas = document.getElementById("matrix");
     const ctx = canvas.getContext("2d");
