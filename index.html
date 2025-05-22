@@ -328,6 +328,234 @@ In my free time, you'll find me at the gym, practicing martial arts, on my motor
         }
       }).then(response => {
         if (response.ok) {
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ThoreInflux | Matrix Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <audio id="background-sound" src="assets/sounds/Extra Terra - Morpheus.mp3" preload="auto" loop></audio>
+    <canvas id="matrix"></canvas>
+
+<header>
+  <div class="header-container" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
+    <h1 class="glow-pulse" style="margin: 0;">Welcome to ThoreInflux</h1>
+    <button id="matrix-audio-btn" class="matrix-audio-btn" aria-label="Toggle background sound" style="background: none; border: none; padding: 0;">
+      <img src="assets/icons/media-player-music-music-symbol-svgrepo-com.svg" alt="Play/Stop Background Sound" style="height: 2.5rem;">
+    </button>
+  </div>
+  <p style="text-align: center;">My digital realm – Blog, Training & Projects</p>
+</header>
+
+<script>
+  const audioBtn = document.getElementById('matrix-audio-btn');
+  const audio = new Audio('assets/sounds/Extra Terra - Morpheus.mp3');
+  let isPlaying = false;
+
+  audioBtn.addEventListener('click', () => {
+    if (!isPlaying) {
+      audio.play();
+      audioBtn.classList.add('playing');
+      isPlaying = true;
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+      audioBtn.classList.remove('playing');
+      isPlaying = false;
+    }
+  });
+</script>
+
+<section>
+  <div id="monitor-wrapper">
+    <div class="section-header-aboutme">
+      <h2>~$ about-me --open</h2>
+      <div class="section-header-line"></div>
+    </div>
+    <p class="section-placeholder-text">
+      Diese Sektion befindet sich gerade in Bearbeitung. Bitte hab noch etwas Geduld!
+    </p>
+  </div>
+</section>
+
+<section style="background-color: rgba(0, 0, 0, 0.70);padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
+  <div class="section-header">
+    <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
+    <h2>~$ training --start</h2>
+  </div>
+
+  <p style="margin-top: 1rem;">
+    This past week, I focused heavily on refining the structure and design of this website. I implemented a Matrix-style background,
+    optimized the audio playback system, and ensured cross-browser compatibility.
+  </p>
+
+  <p>
+    I also practiced advanced CSS techniques like custom glowing effects, smoother transitions, and responsive styling.
+    A big win was creating a clean toggle for audio narration with visual feedback.
+  </p>
+
+  <p>
+    Next steps: improving accessibility, adding media queries for better mobile support, and maybe starting to build a portfolio section.
+  </p>
+</section>
+
+<section style="background-color: rgba(0, 0, 0, 0.70);padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
+  <div class="section-header">
+    <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
+    <h2>~$ portfolio --launch</h2>
+  </div>
+      <p>Showcasing selected works, projects and digital experiments.</p>
+    </section>
+
+<section id="guestbook">
+  <h2>~$ guestbook --open</h2>
+  <div class="guestbook-entries">
+    <div class="entry">
+      <strong>Neo</strong><br />
+      “Follow the white rabbit.”
+    </div>
+    <div class="entry">
+      <strong>Trinity</strong><br />
+      “The Matrix has you.”
+    </div>
+    <div class="entry">
+      <strong>Morpheus</strong><br />
+      “Welcome to the real world.”
+    </div>
+  </div>
+  <form id="guestbook-form">
+    <input type="text" placeholder="Your Name" required />
+    <textarea rows="4" placeholder="Leave a message..." required></textarea>
+    <button type="submit">Sign Guestbook</button>
+  </form>
+  <p id="guestbook-message" style="display:none; margin-top:10px; color:lime;">Thank you for your message. This feature is under construction.</p>
+  <audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
+  </section>
+
+  <script>
+    const guestbookForm = document.getElementById('guestbook-form');
+    const guestbookMessage = document.getElementById('guestbook-message');
+    const submitSound = document.getElementById('submit-sound');
+
+    guestbookForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      submitSound.play();
+      guestbookForm.reset();
+      guestbookMessage.style.display = 'block';
+    });
+  </script>
+
+<section id="contact">
+  <h2>~$ contact_me --initiate</h2>
+  <form id="contact-form" action="https://formspree.io/f/xgvkdbjy" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+    <button type="submit">Send</button>
+  </form>
+  <p id="form-success" class="hidden">Thank you for your message!</p>
+  <audio id="success-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
+</section>
+
+<script>
+  const form = document.getElementById('contact-form');
+  const successMessage = document.getElementById('form-success');
+  const successAudio = document.getElementById('success-sound');
+  const backgroundAudio = document.getElementById('background-sound');
+
+  window.addEventListener('load', () => {
+    if (backgroundAudio && backgroundAudio.paused) {
+      backgroundAudio.volume = 0.5;
+      backgroundAudio.play().catch(err => {
+        console.warn('Background music autoplay failed:', err);
+      });
+    }
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        successMessage.textContent = 'Thank you for your message!';
+        successMessage.classList.remove('hidden');
+        form.reset();
+        if (successAudio) {
+          successAudio.currentTime = 0;
+          successAudio.play().catch(err => console.warn('Sound playback failed:', err));
+        }
+      } else {
+        successMessage.textContent = 'Something went wrong. Please try again.';
+        successMessage.classList.remove('hidden');
+        successMessage.style.color = 'red';
+      }
+    }).catch(() => {
+      successMessage.textContent = 'Something went wrong. Please try again.';
+      successMessage.classList.remove('hidden');
+      successMessage.style.color = 'red';
+    });
+  });
+</script>
+  </body>
+
+<script>
+    // Matrix background effect
+    const canvas = document.getElementById("matrix");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    let letters = Array(256).join("1").split("");
+
+    const draw = () => {
+      ctx.fillStyle = "rgba(0,0,0,0.05)";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#0f0";
+      letters.map((y_pos, index) => {
+        const text = String.fromCharCode(3e4 + Math.random() * 33);
+        const x_pos = index * 10;
+        ctx.fillText(text, x_pos, y_pos);
+        letters[index] = y_pos > 758 + Math.random() * 1e4 ? 0 : y_pos + 10;
+      });
+    };
+
+    setInterval(draw, 33);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('form-success');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
           successMessage.style.display = 'block';
           form.reset();
         } else {
