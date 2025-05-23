@@ -57,23 +57,20 @@ h2 {
   margin-top: 0;
 }
 
-.section-header-aboutme {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.section-header-aboutme h2 {
+  white-space: nowrap;
+  font-size: 1.8rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+  margin: 0;
+  padding-left: 0.5rem;
 }
 
 .section-header-aboutme .section-header-line {
   height: 2px;
   width: 640px;
   background-color: #00ff00;
-  margin-bottom: 10px;
-}
-
-.section-header-aboutme h2 {
-  white-space: nowrap;
-  font-size: 1.2rem;
-  margin: 0;
+  margin-bottom: 5px;
 }
 
 .section-header-aboutme {
