@@ -377,3 +377,95 @@ button:hover {
   line-height: 1.4;
   white-space: pre;
 }
+
+/* ========== Responsive Styling: Smartphones (until 767px) ========== */
+@media (max-width: 767px) {
+  #monitor-wrapper {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 10px;
+  }
+
+  #monitor-power-button {
+    width: 16px;
+    height: 16px;
+    bottom: 690px;
+    right: 195px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== Responsive Styling: Kleine Tablets (768px–1024px) ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #monitor-wrapper {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 11px;
+  }
+
+  #monitor-power-button {
+    width: 18px;
+    height: 18px;
+    bottom: 700px;
+    right: 200px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* ========== Responsive Styling: Desktops (from 1025px) ========== */
+@media (min-width: 1025px) {
+  #monitor-wrapper {
+    transform: scale(1.1);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 13px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========== Responsive Styling: Very Small Devices (to 480px) ========== */
+@media (max-width: 480px) {
+  #monitor-wrapper {
+    transform: scale(0.65);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 9px;
+  }
+
+  #boot-text p,
+  #about-me-text p {
+    font-size: 10px;
+    line-height: 1.3;
+    white-space: pre-wrap;
+  }
+
+  #monitor-power-button {
+    width: 14px;
+    height: 14px;
+    bottom: 680px;
+    right: 192px;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+}
