@@ -378,34 +378,64 @@ button:hover {
   white-space: pre;
 }
 
-/* ========== Responsive Styling: Smartphones (to 767px) ========== */
 @media (max-width: 767px) {
-  #monitor-wrapper {
-    width: 90vw;
-    height: auto;
-    transform: scale(0.8);
-    transform-origin: top center;
+  body {
+    padding: 0 10px;
   }
 
-  .monitor-layer {
+  #monitor-wrapper {
+    transform: scale(0.6);
+    transform-origin: top center;
+    margin: 0 auto;
     width: 100%;
-    height: auto;
   }
 
   #monitor-screen {
     font-size: 10px;
-    width: 100%;
-    height: auto;
+    padding: 0;
+  }
+
+  #boot-text {
+    width: 90%;
+    left: 5%;
+    top: 150px;
+    font-size: 11px;
   }
 
   #monitor-power-button {
-    transform: scale(0.8);
-    bottom: 62%;
-    right: 10%;
+    width: 16px;
+    height: 16px;
+    bottom: 670px;
+    right: 190px;
+  }
+
+  .content-section,
+  #guestbook,
+  #contact,
+  #portfolio,
+  #training {
+    width: 100%;
+    margin: 1.5rem 0;
+    padding: 15px;
+    border-radius: 8px;
   }
 
   p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  h1, h2 {
+    font-size: 1.2rem;
+  }
+
+  .header-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #matrix-audio-btn img {
+    height: 2rem;
   }
 }
 
