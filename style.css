@@ -1,72 +1,471 @@
-/* ========== Fonts ========== */ body { margin: 0; font-family: 'Share Tech Mono', monospace; color: #00ff00; background-color: black; overflow-x: hidden; }
+/* ========== Fonts ========== */
+body {
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+  background-color: black;
+  overflow-x: hidden;
+}
 
-/* ========== Text Glow Animation ========== */ @keyframes glowPulse { 0% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; } 50% { text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00; } 100% { text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00; } }
+/* ========== Animation ========== */
+@keyframes glowPulse {
+  0% {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  }
+  50% {
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+  100% {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  }
+}
 
-.glow-pulse { color: #00ff00; animation: glowPulse 2s infinite; }
+.glow-pulse {
+  color: #00ff00;
+  animation: glowPulse 2s infinite;
+}
 
-/* ========== Header Styling ========== */ header { text-align: center; padding: 3rem 1rem; background: rgba(0, 255, 0, 0.05); border-bottom: 1px dashed #0f0; }
+/* ========== Layout: Header ========== */
+header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(0, 255, 0, 0.05);
+  border-bottom: 1px dashed #0f0;
+}
 
-header h1 { font-size: 2.5rem; margin: 0; }
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
 
-header p { font-size: 1.2rem; color: #0f0; }
+header p {
+  font-size: 1.2rem;
+  color: #0f0;
+}
 
-/* ========== Section Base Styling ========== */ section { margin-left: -10px; margin-right: -10px; padding: 10px; border-bottom: 1px dashed #0f0; }
+/* ========== Layout: Sections general ========== */
+section {
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 10px;
+  border-bottom: 1px dashed #0f0;
+}
 
-h2 { border-left: 4px solid #0f0; padding-left: 1rem; margin-top: 0; }
+h2 {
+  border-left: 4px solid #0f0;
+  padding-left: 1rem;
+  margin-top: 0;
+}
 
-/* ========== Section Headers ========== */ .section-header-aboutme { display: flex; align-items: center; gap: 10px; }
+.section-header-aboutme h2 {
+  white-space: nowrap;
+  font-size: 1.8rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+  margin: 0;
+  padding-left: 0.5rem;
+}
 
-.section-header-aboutme h2 { white-space: nowrap; font-size: 1.6rem; font-family: 'Share Tech Mono', monospace; color: #00ff00; margin: 0; padding-left: 0.5rem; }
+.section-header-aboutme .section-header-line {
+  height: 2px;
+  width: 640px;
+  background-color: #00ff00;
+  margin-bottom: 5px;
+}
 
-.section-header-line { height: 2px; width: 640px; background-color: #00ff00; margin-bottom: 5px; }
+.section-header-aboutme {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-.section-placeholder-text { margin-top: 2.5rem; text-align: center; font-size: 1.4rem; color: red; max-width: 700px; margin-left: auto; margin-right: auto; }
+.section-header-aboutme h2 {
+  white-space: nowrap;
+  font-size: 1.6rem;
+  margin: 0;
+}
 
-/* ========== Dot Loader Animation ========== */ @keyframes dots { 0% { content: "."; } 33% { content: ".."; } 66% { content: "..."; } 100% { content: "."; } }
+.section-header-line {
+  height: 2px;
+  width: 40px; 
+  background-color: #00ff00;
+}
 
-.dot-loader-heading::after { content: "."; animation: dots 1.5s infinite steps(1, end); margin-left: 6px; font-weight: normal; color: #00ff00; font-family: 'Share Tech Mono', monospace; }
+.section-placeholder-text {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1.4rem;  
+  color: red;         
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* ========== Box Styling (Feature Sections) ========== */ #guestbook, #contact, #portfolio, #training, #about { background-color: rgba(0, 0, 0, 0.85); border: 1px dashed #00ff00; border-radius: 10px; padding: 20px; margin: 2rem 0 2rem 2rem; max-width: 500px; width: calc(100% - 40px); box-sizing: border-box; }
+@keyframes dots {
+  0%   { content: "."; }
+  33%  { content: ".."; }
+  66%  { content: "..."; }
+  100% { content: "."; }
+}
 
-/* ========== Form Styling ========== */ form { display: flex; flex-direction: column; gap: 1rem; max-width: 500px; margin-top: 1rem; }
+.dot-loader-heading {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: inherit;
+  color: inherit;
+}
 
-input, textarea, button { background-color: black; border: 1px solid #0f0; color: #0f0; padding: 0.5rem; font-family: 'Share Tech Mono', monospace; }
+.dot-loader-heading::after {
+  content: ".";
+  animation: dots 1.5s infinite steps(1, end);
+  margin-left: 6px;
+  font-weight: normal;
+  color: #00ff00;
+  font-family: 'Share Tech Mono', monospace;
+}
 
-button { background-color: transparent; border-radius: 5px; transition: background-color 0.3s ease, color 0.3s ease; cursor: pointer; }
+/* ========== Layout: Special Sections ========== */
+#guestbook, #contact, #portfolio, #training, #about {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px dashed #00ff00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 2rem 0 2rem 2rem;
+  max-width: 500px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
 
-button:hover { background-color: #00ff00; color: black; }
+/* ========== Formulare ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin-top: 1rem;
+}
 
-/* ========== Music Button Styling ========== */ #matrix-audio-btn img { filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(85deg) drop-shadow(0 0 3px #00ff00) drop-shadow(0 0 6px #00ff00); transition: filter 0.3s ease, box-shadow 0.3s ease; }
+input,
+textarea,
+button {
+  background-color: black;
+  border: 1px solid #0f0;
+  color: #0f0;
+  padding: 0.5rem;
+  font-family: 'Share Tech Mono', monospace;
+}
 
-#matrix-audio-btn.playing img { filter: brightness(0) saturate(100%) invert(65%) sepia(100%) saturate(750%) hue-rotate(85deg) drop-shadow(0 0 6px #00ff00) drop-shadow(0 0 12px #00ff00); }
+/* ========== Utility-Klassen ========== */
+.hidden {
+  display: none;
+}
 
-/* ========== Canvas Background ========== */ #matrix { position: fixed; top: 0; left: 0; z-index: -1; }
+/* ========== Music Button ========== */
+#matrix-audio-btn img {
+  filter: brightness(0) saturate(100%) invert(30%) sepia(100%) saturate(500%) hue-rotate(85deg)
+          drop-shadow(0 0 3px #00ff00) drop-shadow(0 0 6px #00ff00);
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
 
-/* ========== Monitor Layout ========== */ #monitor-wrapper { position: relative; width: 1024px; height: 1024px; margin: 30px auto; }
+#matrix-audio-btn.playing img {
+  filter: brightness(0) saturate(100%) invert(65%) sepia(100%) saturate(750%) hue-rotate(85deg)
+          drop-shadow(0 0 6px #00ff00) drop-shadow(0 0 12px #00ff00);
+}
 
-.monitor-layer { position: absolute; width: 1024px; height: 1024px; top: 0; left: 0; object-fit: cover; pointer-events: none; }
+/* ========== Forms ========== */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #00ff00;
+  background-color: black;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
 
-#monitor-screen { position: absolute; top: 0; left: 0; width: 1024px; height: 1024px; display: flex; justify-content: center; align-items: center; flex-direction: column; color: #00ff00; font-size: 12px; text-shadow: 0 0 2px #00ff00; z-index: 2; pointer-events: none; }
+button {
+  background-color: transparent;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px 20px;
+  font-family: 'Courier New', monospace;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-#monitor-glow { position: absolute; top: 170px; left: 230px; width: 510px; height: 350px; border-radius: 20px; background: rgba(255, 255, 255, 0.12); box-shadow: 0 0 180px rgba(255, 255, 255, 0.3), 0 0 320px rgba(255, 255, 255, 0.2), 0 0 480px rgba(255, 255, 255, 0.1), inset 0 0 140px rgba(255, 255, 255, 0.35); opacity: 0; transition: all 1.2s ease; z-index: 2; }
+button:hover {
+  background-color: #00ff00;
+  color: black;
+}
+/* === Contact Me Section === */
+#contact {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 1px dashed #00ff00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 2rem 0 2rem 2rem;
+  max-width: 500px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
 
-#monitor-power-button { position: absolute; bottom: 715px; right: 203px; width: 22px; height: 22px; background: red; border-radius: 50%; cursor: pointer; z-index: 6; animation: pulse-glow 1s infinite; }
+#contact h2 {
+  border-left: none;
+  padding-left: 0;
+}
 
-#monitor-power-button.active { animation: none; box-shadow: 0 0 25px red; }
+/* === Guestbook Section === */
+#guestbook {
+    background-color: rgba(0, 0, 0, 0.85);
+  border: 1px dashed #00ff00;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 2rem 0 2rem 2rem;
+  max-width: 500px;
+  width: calc(100% - 40px);
+  box-sizing: border-box;
+}
 
-@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.2); background: rgba(180, 0, 0, 0.8); } 50% { box-shadow: 0 0 25px rgba(255, 0, 0, 1); background: red; } }
+#guestbook h2 {
+  border-left: none;
+  padding-left: 0;
+}
 
-@keyframes screenFlicker { 0%, 100% { opacity: 1; filter: brightness(1); } 15% { opacity: 0.7; filter: brightness(1.3); } 30% { opacity: 0.9; filter: brightness(0.95); } 50% { opacity: 0.6; filter: brightness(1.4); } 75% { opacity: 1; filter: brightness(1); } }
+.guestbook-name {
+  font-weight: 900;
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+}
 
-/* ========== Boot Text Styling ========== */ #boot-text { position: absolute; top: 170px; left: 250px; width: 520px; text-align: left; white-space: pre-line; z-index: 3; filter: blur(0.6px) brightness(1.2); transform: perspective(800px) rotateX(8deg); }
+.guestbook-name {
+  font-weight: 600;
+  font-family: 'Share Tech Mono', monospace;
+  color: #00ff00;
+  text-shadow: 0 0 2px #00ff00, 0 0 4px #00ff00;
+}
 
-#boot-text p, #about-me-text p { font-family: 'Share Tech Mono', monospace; font-size: 12px; margin: 0; white-space: pre; line-height: 1.4; letter-spacing: 0.5px; color: #00ff00; text-shadow: 0 0 2px #00ff00; }
+/* ========== Matrix-Canvas ========== */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
-/* ========== Responsive Styling: Very Small Devices (<= 480px) ========== */ @media (max-width: 480px) { #monitor-wrapper { transform: scale(0.65); transform-origin: top center; } #monitor-screen { font-size: 9px; } #boot-text p, #about-me-text p { font-size: 10px; line-height: 1.3; white-space: pre-wrap; } #monitor-power-button { width: 14px; height: 14px; bottom: 680px; right: 192px; } p { font-size: 0.85rem; } }
+/* ========== Layout: Monitor Sequence ========== */
+#monitor-wrapper {
+  position: relative;
+  width: 1024px;
+  height: 1024px;
+  margin: 30px auto;
+}
 
-/* ========== Responsive Styling: Smartphones (<= 767px) ========== */ @media (max-width: 767px) { #monitor-wrapper { width: 100%; max-width: 320px; aspect-ratio: 1 / 1; margin: 20px auto; transform: none; } .monitor-layer, #monitor-screen, #monitor-glow { width: 100%; height: auto; top: 0; left: 0; } #monitor-screen { font-size: 10.5px; } #boot-text p, #about-me-text p { font-size: 10.5px; line-height: 1.3; white-space: pre-wrap; } #monitor-power-button { width: 14px; height: 14px; bottom: 680px; right: 192px; } p { font-size: 0.85rem; } header h1 { font-size: 1.6rem; } header p { font-size: 0.95rem; } }
+.monitor-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 1024px;
+  object-fit: cover;
+  pointer-events: none;
+}
 
-/* ========== Responsive Styling: Tablets (768px–1024px) ========== */ @media (min-width: 768px) and (max-width: 1024px) { #monitor-wrapper { transform: scale(0.9); transform-origin: top center; } #monitor-screen { font-size: 11px; } #monitor-power-button { width: 18px; height: 18px; bottom: 700px; right: 200px; } p { font-size: 1rem; } }
+#monitor-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1024px;
+  height: 1024px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #00ff00;
+  font-size: 12px;
+  text-shadow: 0 0 2px #00ff00;
+  z-index: 2;
+  pointer-events: none;
+}
 
-/* ========== Responsive Styling: Desktops (>= 1025px) ========== */ @media (min-width: 1025px) { #monitor-wrapper { transform: scale(1.1); transform-origin: top center; } #monitor-screen { font-size: 13px; } p { font-size: 1.1rem; } }
+#monitor-glow {
+  position: absolute;
+  top: 170px;
+  left: 230px;
+  width: 510px;
+  height: 350px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow:
+    0 0 180px rgba(255, 255, 255, 0.3),
+    0 0 320px rgba(255, 255, 255, 0.2),
+    0 0 480px rgba(255, 255, 255, 0.1),
+    inset 0 0 140px rgba(255, 255, 255, 0.35);
+  opacity: 0;
+  transition: all 1.2s ease;
+  z-index: 2;
+}
 
+#monitor-power-button {
+  position: absolute;
+  bottom: 715px;
+  right: 203px;
+  width: 22px;
+  height: 22px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 6;
+  animation: pulse-glow 1s infinite;
+}
+
+#monitor-power-button.active {
+  animation: none;
+  box-shadow: 0 0 25px red;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.2);
+    background: rgba(180, 0, 0, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 0, 0, 1);
+    background: red;
+  }
+}
+
+@keyframes screenFlicker {
+  0%, 100% { opacity: 1; filter: brightness(1); }
+  15% { opacity: 0.7; filter: brightness(1.3); }
+  30% { opacity: 0.9; filter: brightness(0.95); }
+  50% { opacity: 0.6; filter: brightness(1.4); }
+  75% { opacity: 1; filter: brightness(1); }
+}
+
+#boot-text {
+  position: absolute;
+  top: 170px;
+  left: 250px;
+  width: 520px;
+  text-align: left;
+  white-space: pre-line;
+  z-index: 3;
+  filter: blur(0.6px) brightness(1.2);
+  transform: perspective(800px) rotateX(8deg);
+}
+
+#boot-text p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 14px;
+  margin: 0;
+  white-space: pre;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  color: #00ff00;
+  text-shadow: 0 0 2px #00ff00;
+}
+
+#boot-text p,
+#about-me-text p {
+  font-size: 12px;
+  margin: 0;
+  font-family: 'Share Tech Mono', monospace;
+  line-height: 1.4;
+  white-space: pre;
+}
+
+/* ========== Responsive Styling: Smartphones (until 767px) ========== */
+@media (max-width: 767px) {
+  #monitor-wrapper {
+    transform: scale(0.75);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 10px;
+  }
+
+  #monitor-power-button {
+    width: 16px;
+    height: 16px;
+    bottom: 690px;
+    right: 195px;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ========== Responsive Styling: Kleine Tablets (768px–1024px) ========== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #monitor-wrapper {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 11px;
+  }
+
+  #monitor-power-button {
+    width: 18px;
+    height: 18px;
+    bottom: 700px;
+    right: 200px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* ========== Responsive Styling: Desktops (from 1025px) ========== */
+@media (min-width: 1025px) {
+  #monitor-wrapper {
+    transform: scale(1.1);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 13px;
+  }
+
+  p {
+    font-size: 1.1rem;
+  }
+}
+
+/* ========== Responsive Styling: Very Small Devices (to 480px) ========== */
+@media (max-width: 480px) {
+  #monitor-wrapper {
+    transform: scale(0.65);
+    transform-origin: top center;
+  }
+
+  #monitor-screen {
+    font-size: 9px;
+  }
+
+  #boot-text p,
+  #about-me-text p {
+    font-size: 10px;
+    line-height: 1.3;
+    white-space: pre-wrap;
+  }
+
+  #monitor-power-button {
+    width: 14px;
+    height: 14px;
+    bottom: 680px;
+    right: 192px;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+}
