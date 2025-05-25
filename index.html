@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ThoreInflux | Matrix Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
+  </head>  <body>
     <audio id="background-sound" src="assets/sounds/Extra Terra - Morpheus.mp3" preload="auto" loop></audio>
-    <canvas id="matrix"></canvas>
-
-<header>
+    <canvas id="matrix"></canvas><header>
   <div class="header-container" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
     <h1 class="glow-pulse" style="margin: 0;">Welcome to ThoreInflux</h1>
     <button id="matrix-audio-btn" class="matrix-audio-btn" aria-label="Toggle background sound" style="background: none; border: none; padding: 0;">
@@ -37,56 +32,36 @@
     <img class="monitor-layer monitor-glass" src="assets/images/Monitor_GlassComposite.png" alt="Monitor Glass" />
     <div id="monitor-power-button"></div>
   </div>
-</section>
-
-<section style="background-color: rgba(0, 0, 0, 0.70);padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
+</section><section class="content-section training-section">
   <div class="section-header">
-    <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
+    <div class="section-line"></div>
     <h2 class="dot-loader-heading">~$ training --start</h2>
-  </div>
-
-  <p style="margin-top: 1rem;">
-    This past week, I focused heavily on refining the structure and design of this website. I implemented a Matrix-style background,
-    optimized the audio playback system, and ensured cross-browser compatibility.
+  </div>  <p>
+    This past development phase has been all about building my own Matrix-inspired website from scratch. I planned, designed, and coded each section manually – from the terminal-styled intro to the glowing text effects and interactive components.
+  </p>  <p>
+    I created custom audio systems, implemented animated background effects, and modularized the CSS and JavaScript for better maintainability. The monitor-style boot sequence was one of the most challenging yet rewarding features to bring to life.
+  </p>  <p>
+    As of now, the full layout has been optimized for all major screen sizes – including smartphones and tablets – thanks to targeted media queries and scalable styling.
+  </p>  <p>
+    The next milestones will be focused on expanding the portfolio section, integrating more interactive content, and polishing accessibility features for a wider user base.
   </p>
-
-  <p>
-    I also practiced advanced CSS techniques like custom glowing effects, smoother transitions, and responsive styling.
-    A big win was creating a clean toggle for audio narration with visual feedback.
-  </p>
-
-  <p>
-    Next steps: improving accessibility, adding media queries for better mobile support, and maybe starting to build a portfolio section.
-  </p>
-</section>
-
-<section style="background-color: rgba(0, 0, 0, 0.70);padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
+</section><section style="background-color: rgba(0, 0, 0, 0.70);padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
   <div class="section-header">
     <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
     <h2 class="dot-loader-heading">~$ portfolio --launch</h2>
   </div>
       <p style="margin-top: 1rem;">
   My journey into web design began with a fascination for interactive digital environments. This portfolio is the result of hands-on learning and a growing passion for front-end development.
-</p>
-
-<p>
+</p><p>
   I focused on clean, structured HTML and CSS to build an immersive user interface inspired by the aesthetics of the Matrix. Key elements include layered visuals, custom glow effects, and responsive layouts that adapt across devices.
-</p>
-
-<p>
+</p><p>
   Beyond design, I integrated JavaScript-based animations and audio control features to enhance interactivity. Debugging and modular structuring became essential parts of the development process.
-</p>
-
-<p>
+</p><p>
   Looking ahead, I aim to refine accessibility, expand the use of reusable components, and explore deeper JavaScript functionality—such as dynamic content rendering and form validation.
-</p>
-
-<p>
+</p><p>
   This project reflects not only my technical skills but also my commitment to learning and evolving as a front-end developer.
 </p>
-    </section>
-
-<section id="guestbook">
+    </section><section id="guestbook">
 <h2>~$ guestbook --open</h2>
   <div class="guestbook-entries">
     <div class="entry">
@@ -101,19 +76,14 @@
       <span class="guestbook-name">Morpheus:</span><br />
       “Welcome to the real world.”
     </div>
-  </div>
-
-  <form id="guestbook-form">
+  </div>  <form id="guestbook-form">
     <input type="text" placeholder="Your Name" required />
     <textarea rows="4" placeholder="Leave a message..." required></textarea>
     <button type="submit">Sign Guestbook</button>
-  </form>
-
-  <p id="guestbook-message" class="hidden" style="margin-top:10px; color:lime;">
+  </form>  <p id="guestbook-message" class="hidden" style="margin-top:10px; color:lime;">
     Thank you for your entry! Please note: This guestbook is still under construction and entries are not saved yet.
-  </p>
+  </p><audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
 
-  <audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
 </section>
   <section id="contact">
   <h2>~$ contact_me --initiate</h2>
