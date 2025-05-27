@@ -390,8 +390,8 @@ button:hover {
 /* ========== Responsive Styling: Very Small Devices (max 480px) ========== */
 @media (max-width: 480px) {
   #monitor-wrapper {
-    transform: scale(0.65);
-    transform-origin: top center;
+    transform: scale(0.52);
+    margin-top: 20px;
   }
 
   #monitor-screen {
@@ -412,8 +412,7 @@ button:hover {
     right: 192px;
   }
 
-  p,
-  section p {
+  p, section p {
     font-size: 0.85rem;
   }
 }
@@ -421,8 +420,8 @@ button:hover {
 /* ========== Responsive Styling: Smartphones (481px–767px) ========== */
 @media (min-width: 481px) and (max-width: 767px) {
   #monitor-wrapper {
-    transform: scale(0.75);
-    transform-origin: top center;
+    transform: scale(0.65);
+    margin-top: 30px;
   }
 
   #monitor-screen {
@@ -436,8 +435,7 @@ button:hover {
     right: 195px;
   }
 
-  p,
-  section p {
+  p, section p {
     font-size: 0.9rem;
   }
 }
@@ -445,8 +443,8 @@ button:hover {
 /* ========== Responsive Styling: Tablets (768px–1024px) ========== */
 @media (min-width: 768px) and (max-width: 1024px) {
   #monitor-wrapper {
-    transform: scale(0.9);
-    transform-origin: top center;
+    transform: scale(0.8);
+    margin-top: 40px;
   }
 
   #monitor-screen {
@@ -460,8 +458,7 @@ button:hover {
     right: 200px;
   }
 
-  p,
-  section p {
+  p, section p {
     font-size: 1rem;
   }
 }
@@ -470,51 +467,14 @@ button:hover {
 @media (min-width: 1025px) {
   #monitor-wrapper {
     transform: scale(1.1);
-    transform-origin: top center;
+    margin-top: 40px;
   }
 
   #monitor-screen {
     font-size: 13px;
   }
 
-  p,
-  section p {
+  p, section p {
     font-size: 1.1rem;
-  }
-}
-
-/* ========== Responsive Fixes: Compact Layout (up to 768px) ========== */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  .header-container {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  #boot-text,
-  #about-me-text {
-    top: 10%;
-    left: 5%;
-    width: 90%;
-    font-size: 10px;
-  }
-
-  #monitor-glow {
-    top: 20%;
-    left: 15%;
-    width: 70%;
-    height: 40%;
   }
 }
