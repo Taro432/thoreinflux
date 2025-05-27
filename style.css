@@ -270,7 +270,9 @@ button:hover {
   position: relative;
   width: 1024px;
   height: 1024px;
-  margin: 30px auto;
+  margin: 30px 0 30px 0;
+  transform-origin: top left;
+  transform: scale(1.1);
 }
 
 .monitor-layer {
@@ -390,8 +392,11 @@ button:hover {
 /* ========== Responsive Styling: Very Small Devices (max 480px) ========== */
 @media (max-width: 480px) {
   #monitor-wrapper {
-    transform: scale(0.52);
-    margin-top: 20px;
+    transform: scale(0.42);
+    transform-origin: top left;
+    display: block;
+    margin-left: 0;
+    margin-top: 10px;
   }
 
   #monitor-screen {
@@ -412,7 +417,8 @@ button:hover {
     right: 192px;
   }
 
-  p, section p {
+  p,
+  section p {
     font-size: 0.85rem;
   }
 }
@@ -420,8 +426,11 @@ button:hover {
 /* ========== Responsive Styling: Smartphones (481px–767px) ========== */
 @media (min-width: 481px) and (max-width: 767px) {
   #monitor-wrapper {
-    transform: scale(0.65);
-    margin-top: 30px;
+    transform: scale(0.6);
+    transform-origin: top left;
+    display: block;
+    margin-left: 0;
+    margin-top: 20px;
   }
 
   #monitor-screen {
@@ -435,7 +444,8 @@ button:hover {
     right: 195px;
   }
 
-  p, section p {
+  p,
+  section p {
     font-size: 0.9rem;
   }
 }
@@ -444,7 +454,10 @@ button:hover {
 @media (min-width: 768px) and (max-width: 1024px) {
   #monitor-wrapper {
     transform: scale(0.8);
-    margin-top: 40px;
+    transform-origin: top left;
+    display: block;
+    margin-left: 0;
+    margin-top: 30px;
   }
 
   #monitor-screen {
@@ -458,7 +471,8 @@ button:hover {
     right: 200px;
   }
 
-  p, section p {
+  p,
+  section p {
     font-size: 1rem;
   }
 }
@@ -467,6 +481,9 @@ button:hover {
 @media (min-width: 1025px) {
   #monitor-wrapper {
     transform: scale(1.1);
+    transform-origin: top left;
+    display: block;
+    margin-left: 0;
     margin-top: 40px;
   }
 
@@ -474,7 +491,8 @@ button:hover {
     font-size: 13px;
   }
 
-  p, section p {
+  p,
+  section p {
     font-size: 1.1rem;
   }
 }
