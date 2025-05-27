@@ -5,7 +5,9 @@
     <title>ThoreInflux | Matrix Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
-  </head>  <body>
+  </head>  
+  
+ <body>
     <audio id="background-sound" src="assets/sounds/Extra Terra - Morpheus.mp3" preload="auto" loop></audio>
     <canvas id="matrix"></canvas><header>
   <div class="header-container" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
@@ -15,7 +17,8 @@
     </button>
   </div>
   <p style="text-align: center;">My digital realm – Blog, Training & Projects</p>
-</header>
+ </header>
+
 <section id="monitor-sequence">
   <div class="section-header">
     <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
@@ -32,11 +35,14 @@
     <img class="monitor-layer monitor-glass" src="assets/images/Monitor_GlassComposite.png" alt="Monitor Glass" />
     <div id="monitor-power-button"></div>
   </div>
-</section><section class="content-section training-section">
+</section>
+
+<section class="content-section training-section">
   <div class="section-header">
     <div class="section-line"></div>
     <h2 class="dot-loader-heading">~$ training --start</h2>
-  </div>  <p>
+  </div>  
+  <p>
     This past development phase has been all about building my own Matrix-inspired website from scratch. I planned, designed, and coded each section manually – from the terminal-styled intro to the glowing text effects and interactive components.
   </p>  <p>
     I created custom audio systems, implemented animated background effects, and modularized the CSS and JavaScript for better maintainability. The monitor-style boot sequence was one of the most challenging yet rewarding features to bring to life.
@@ -45,23 +51,42 @@
   </p>  <p>
     The next milestones will be focused on expanding the portfolio section, integrating more interactive content, and polishing accessibility features for a wider user base.
   </p>
-</section><section style="background-color: rgba(0, 0, 0, 0.70);padding: 20px; border-radius: 10px; color: #00ff00; font-size: 1rem; line-height: 1.6;">
+</section>
+
+<section class="content-section portfolio-section">
   <div class="section-header">
     <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
     <h2 class="dot-loader-heading">~$ portfolio --launch</h2>
   </div>
-      <p style="margin-top: 1rem;">
+<p style="margin-top: 1rem;">
   My journey into web design began with a fascination for interactive digital environments. This portfolio is the result of hands-on learning and a growing passion for front-end development.
-</p><p>
-  I focused on clean, structured HTML and CSS to build an immersive user interface inspired by the aesthetics of the Matrix. Key elements include layered visuals, custom glow effects, and responsive layouts that adapt across devices.
-</p><p>
-  Beyond design, I integrated JavaScript-based animations and audio control features to enhance interactivity. Debugging and modular structuring became essential parts of the development process.
-</p><p>
-  Looking ahead, I aim to refine accessibility, expand the use of reusable components, and explore deeper JavaScript functionality—such as dynamic content rendering and form validation.
-</p><p>
-  This project reflects not only my technical skills but also my commitment to learning and evolving as a front-end developer.
 </p>
-    </section><section id="guestbook">
+<p>
+  On May 17th, 2025, I officially started building this Matrix-inspired website as part of my personal training in front-end development.
+  With no prior experience in advanced web design, I challenged myself to conceptualize, plan, and code the entire project from scratch.
+</p>
+<p>
+  In the early days, I focused heavily on mastering the basics: structuring HTML properly, learning how CSS controls layout and style, 
+  and understanding how JavaScript adds interactivity and logic to a site. It was a lot to take in, but each section I created taught me something new.
+</p>
+<p>
+  I quickly moved on to more complex topics, such as responsive design principles, flexbox/grid layouts, and modular code organization. 
+  One of the biggest milestones was implementing the animated Matrix background using the HTML5 canvas and dynamically controlling the site’s sound system.
+</p>
+<p>
+  The “monitor boot sequence” was another highlight. It required combining layered images, animations, sounds, and asynchronous typed text effects to simulate a terminal experience.
+  Debugging it and making it responsive across different devices was both frustrating and extremely rewarding.
+</p>
+<p>
+  Over time, I introduced reusable CSS components, improved semantic structure, and optimized accessibility. The project became more than a practice site—it evolved into a real portfolio and a reflection of my identity as a creator.
+</p>
+<p>
+  As I continue to refine this platform, I’m proud of how far I’ve come since May. Each improvement, no matter how small, adds to my growing skill set.
+  This site will remain a live project and learning playground as I dive deeper into animation, validation logic, and eventually even back-end integration.
+</p>
+</section>
+
+<section id="guestbook">
 <h2>~$ guestbook --open</h2>
   <div class="guestbook-entries">
     <div class="entry">
@@ -83,16 +108,19 @@
   </form>  <p id="guestbook-message" class="hidden" style="margin-top:10px; color:lime;">
     Thank you for your entry! Please note: This guestbook is still under construction and entries are not saved yet.
   </p><audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
-
 </section>
-  <section id="contact">
+
+ <section id="contact">
   <h2>~$ contact_me --initiate</h2>
   <form id="contact-form" action="https://formspree.io/f/xgvkdbjy" method="POST">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
     <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
     <button type="submit">Send</button>
-  </form>
+</form>
+</section>
+
+<section>
   <p id="form-success" class="hidden">Thank you for your message!</p>
   <audio id="success-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
 </section>
