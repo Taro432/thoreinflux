@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +10,8 @@
   
  <body>
     <audio id="background-sound" src="assets/sounds/Extra Terra - Morpheus.mp3" preload="auto" loop></audio>
-    <canvas id="matrix"></canvas><header>
+    <canvas id="matrix"></canvas>
+<header>
   <div class="header-container" style="display: flex; align-items: center; justify-content: center; gap: 15px;">
     <h1 class="glow-pulse" style="margin: 0;">Welcome to ThoreInflux</h1>
     <button id="matrix-audio-btn" class="matrix-audio-btn" aria-label="Toggle background sound" style="background: none; border: none; padding: 0;">
@@ -19,9 +21,10 @@
   <p style="text-align: center;">My digital realm – Blog, Training & Projects</p>
  </header>
 
-<section id="monitor-sequence">
+<section class="content-section aboutme-section">
   <div class="section-header">
-    <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
+    <div class="section-line">
+  </div>
     <h2 class="dot-loader-heading">~$ about-me --decrypt</h2>
   </div>
   <div id="monitor-wrapper">
@@ -34,31 +37,43 @@
     </div>
     <img class="monitor-layer monitor-glass" src="assets/images/Monitor_GlassComposite.png" alt="Monitor Glass" />
     <div id="monitor-power-button"></div>
-  </div>
+    </div>
+    <div id="mobile-about-me-compact">
+  > identity.confirmed: ThoreInflux  
+  > status: in training (web design / front-end engineering)  
+  > languages: HTML, CSS, JS — actively acquiring proficiency  
+  > origin: DE | age: 29 | languages: [German, English]  
+  > affinity: tech systems, PC hardware, AI models, IT support  
+  > mindset: structured | analytical | independent | solution-driven  
+  > objectives: build immersive, high-functioning digital spaces
+   </div>
 </section>
 
 <section class="content-section training-section">
   <div class="section-header">
-    <div class="section-line"></div>
+    <div class="section-line">
+  </div>
     <h2 class="dot-loader-heading">~$ training --start</h2>
   </div>  
   <p>
     This past development phase has been all about building my own Matrix-inspired website from scratch. I planned, designed, and coded each section manually – from the terminal-styled intro to the glowing text effects and interactive components.
-  </p>  <p>
+  </p>  
+  <p>
     I created custom audio systems, implemented animated background effects, and modularized the CSS and JavaScript for better maintainability. The monitor-style boot sequence was one of the most challenging yet rewarding features to bring to life.
-  </p>  <p>
+  </p>  
+  <p>
     As of now, the full layout has been optimized for all major screen sizes – including smartphones and tablets – thanks to targeted media queries and scalable styling.
-  </p>  <p>
+  </p>  
+  <p>
     The next milestones will be focused on expanding the portfolio section, integrating more interactive content, and polishing accessibility features for a wider user base.
   </p>
 </section>
 
 <section class="content-section portfolio-section">
   <div class="section-header">
-    <div style="width: 4px; height: 100%; background-color: #00ff00;"></div>
     <h2 class="dot-loader-heading">~$ portfolio --launch</h2>
   </div>
-<p style="margin-top: 1rem;">
+<p>
   My journey into web design began with a fascination for interactive digital environments. This portfolio is the result of hands-on learning and a growing passion for front-end development.
 </p>
 <p>
@@ -101,13 +116,16 @@
       <span class="guestbook-name">Morpheus:</span><br />
       “Welcome to the real world.”
     </div>
-  </div>  <form id="guestbook-form">
+  </div>  
+  <form id="guestbook-form">
     <input type="text" placeholder="Your Name" required />
     <textarea rows="4" placeholder="Leave a message..." required></textarea>
     <button type="submit">Sign Guestbook</button>
-  </form>  <p id="guestbook-message" class="hidden" style="margin-top:10px; color:lime;">
+  </form>  
+  <p id="guestbook-message" class="hidden" style="margin-top:10px; color:lime;">
     Thank you for your entry! Please note: This guestbook is still under construction and entries are not saved yet.
-  </p><audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
+  </p>
+  <audio id="submit-sound" src="assets/sounds/614722__newlocknew__matrix-style-morphing-transition-77lrs.wav" preload="auto"></audio>
 </section>
 
  <section id="contact">
