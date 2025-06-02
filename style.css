@@ -376,12 +376,12 @@ button:hover {
   }
 
   .dot-loader-heading {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
   
   .under-construction {
     color: #ffff00;
-    font-size: 1.2rem;
+    font-size: 0.95rem;
   }
 }
 
