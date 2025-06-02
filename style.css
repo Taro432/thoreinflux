@@ -353,6 +353,29 @@ button:hover {
   section p {
     font-size: 0.9rem;
   }
+  
+  #mobile-about-me-compact {
+  font-family: 'Share Tech Mono', monospace;
+  color: white;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: pre-line;
+  }
+
+#mobile-about-me-compact .red-arrow {
+  color: red;
+  margin-right: 6px;
+  }
+
+#mobile-about-me-compact .intro-line {
+  margin-bottom: 1rem;
+  }
+
+#guestbook,
+  #contact {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* ========== Responsive Styling: Extra Small Devices (max-width: 480px) ========== */
@@ -376,12 +399,17 @@ button:hover {
   }
 
   .dot-loader-heading {
-    font-size: 1rem;
+    font-size: 1.25rem;
   }
   
   .under-construction {
     color: #ffff00;
-    font-size: 0.95rem;
+    font-size: 1.2rem;
+  }
+  
+  #boot-text,
+  #mobile-about-me-compact {
+  transform: none !important;
   }
 }
 
@@ -441,13 +469,13 @@ button:hover {
   gap: 10px;
   flex-direction: row;
   text-align: center;
-}
+  }
 
 .header-container h1 {
   font-size: 2.5rem;
   margin: 0;
   white-space: nowrap;
-}
+  }
 
 #matrix-audio-btn {
   display: flex;
@@ -458,15 +486,16 @@ button:hover {
   padding: 0;
   width: 2.5rem;
   height: 2.5rem;
-}
+  }
 
 #matrix-audio-btn img {
   width: 100%;
   height: auto;
-}
+  }
 
 #guestbook h2,
 #contact h2 {
   border-left: none;
   padding-left: 0;
+  }
 }
