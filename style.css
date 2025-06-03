@@ -481,6 +481,25 @@ button:hover {
   }
 
   #mobile-about-me-compact {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: white;
+    font-family: 'Share Tech Mono', monospace;
+    text-shadow: 0 0 2px #00ff00;
+    white-space: pre-line;
+    transform: none !important;
+    width: calc(100% - 40px);
+    margin: 20px auto;
+    padding: 10px;
     display: block;
+  }
+
+  #mobile-about-me-compact .red-arrow {
+    color: red;
+    margin-right: 6px;
+  }
+
+  #mobile-about-me-compact .intro-line {
+    margin-bottom: 1rem;
   }
 }
