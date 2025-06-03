@@ -330,8 +330,8 @@ button:hover {
   #mobile-about-me-compact {
     display: block;
     padding: 10px;
-    font-size: 10px;
-    color: #00ff00;
+    font-size: 0.85rem;
+    color: white;
     white-space: pre-line;
     font-family: 'Share Tech Mono', monospace;
     text-shadow: 0 0 2px #00ff00;
@@ -340,6 +340,22 @@ button:hover {
     width: calc(100% - 40px);
     position: relative;
     z-index: 5;
+    line-height: 1.4;
+  }
+
+  #mobile-about-me-compact .red-arrow {
+    color: red;
+    margin-right: 6px;
+  }
+
+  #mobile-about-me-compact .intro-line {
+    margin-bottom: 1rem;
+  }
+
+  #guestbook,
+  #contact {
+    margin-left: auto;
+    margin-right: auto;
   }
 
   body {
@@ -353,63 +369,19 @@ button:hover {
   section p {
     font-size: 0.9rem;
   }
-  
-  #mobile-about-me-compact {
-  font-family: 'Share Tech Mono', monospace;
-  color: white;
-  font-size: 0.85rem;
-  line-height: 1.4;
-  white-space: pre-line;
-  }
-
-#mobile-about-me-compact .red-arrow {
-  color: red;
-  margin-right: 6px;
-  }
-
-#mobile-about-me-compact .intro-line {
-  margin-bottom: 1rem;
-  }
-
-#guestbook,
-  #contact {
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* ========== Responsive Styling: Extra Small Devices (max-width: 480px) ========== */
-@media (max-width: 480px) {
-  .header-container {
-    flex-wrap: nowrap;
-    gap: 6px;
-    padding: 0 10px;
-    justify-content: space-between;
-  }
-
-  .header-container h1 {
-    font-size: 1.6rem !important;
-    line-height: 1.2;
-  }
-
-  #matrix-audio-btn {
-    width: 1.8rem;
-    height: 1.8rem;
-    flex-shrink: 0;
-  }
 
   .dot-loader-heading {
     font-size: 1.25rem;
   }
-  
+
+  #boot-text,
+  #mobile-about-me-compact {
+    transform: none !important;
+  }
+
   .under-construction {
     color: #ffff00;
     font-size: 1.2rem;
-  }
-  
-  #boot-text,
-  #mobile-about-me-compact {
-  transform: none !important;
   }
 }
 
@@ -497,5 +469,18 @@ button:hover {
 #contact h2 {
   border-left: none;
   padding-left: 0;
+  }
+  
+@media (max-width: 1024px) and (orientation: landscape) and (pointer: coarse) {
+  #boot-text,
+  #about-me-text,
+  #monitor-wrapper,
+  #monitor-screen,
+  #monitor-power-button {
+    display: none !important;
+  }
+
+  #mobile-about-me-compact {
+    display: block;
   }
 }
