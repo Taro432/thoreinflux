@@ -133,11 +133,6 @@ h2 {
   background-color: #00ff00;
 }
 
-.under-construction {
-  color: #ffff00;
-  font-size: 2rem;
-}
-
 .dot-loader-heading {
   display: inline-block;
   vertical-align: middle;
