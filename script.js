@@ -27,22 +27,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ===== Guestbook Form =====
-  const guestbookForm = document.getElementById('guestbook-form');
+  const guestbookForm    = document.getElementById('guestbook-form');
   const guestbookMessage = document.getElementById('guestbook-message');
-  const submitSound = document.getElementById('submit-sound');
+  const submitSound      = document.getElementById('submit-sound');
 
   if (guestbookForm) {
-    guestbookForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      submitSound?.play();
-      guestbookForm.reset();
-      guestbookMessage.classList.remove('hidden');
-
-      setTimeout(() => {
-        guestbookMessage.classList.add('hidden');
-      }, 5000);
-    });
-  }
+  guestbookForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    guestbookMessage.classList.remove('hidden');
+    guestbookForm.reset();
+    submitSound?.play().catch(err =>
+      console.warn('Guestbook sound playback failed:', err)
+    );
+    setTimeout(() => {
+      guestbookMessage.classList.add('hidden');
+    }, 5000);
+  });
+}
 
   // ===== Contact Form =====
   const contactForm = document.getElementById('contact-form');
