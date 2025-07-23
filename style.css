@@ -240,14 +240,15 @@ button:hover {
 }
 
 /* ========== Monitor Layout ========== */
-#monitor-wrapper {
-  position: relative;
+  #monitor-wrapper {
   width: 1024px;
   height: 1024px;
-  margin: 30px 0;
-  transform-origin: top left;
-  transform: scale(1.1);
-  display: block;
+  transform: scale(0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto; 
 }
 
 .monitor-layer {
@@ -328,7 +329,7 @@ button:hover {
 
 #boot-text p,
 #about-me-text p {
-  font-size: 12px;
+  font-size: 13px;
   margin: 0;
   font-family: 'Share Tech Mono', monospace;
   line-height: 1.4;
@@ -338,4 +339,43 @@ button:hover {
 /* ========== Utility ========== */
 .hidden {
   display: none;
+}
+
+/* ========== Responsive Fix for Mobile Portrait ========== */
+@media screen and (max-width: 768px) {
+  #monitor-wrapper {
+    width: 95vw;
+    height: auto;
+    transform: scale(1);
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .monitor-layer,
+  #monitor-screen {
+    width: 95vw;
+    height: auto;
+  }
+
+  #monitor-glow {
+    top: 15%;
+    left: 5%;
+    width: 85vw;
+    height: 40vw;
+    border-radius: 10px;
+  }
+
+  #boot-text,
+  #about-me-text {
+    top: 18%;
+    left: 5%;
+    width: 90vw;
+    font-size: 12px;
+  }
+
+  #monitor-power-button {
+    bottom: 20%;
+    right: 10%;
+  }
+  
 }
