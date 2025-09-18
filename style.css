@@ -336,6 +336,14 @@ button:hover {
   white-space: pre;
 }
 
+.monitor-base {
+  filter: 
+    drop-shadow(0 0 10px rgba(0, 255, 0, 0.6))
+    drop-shadow(0 0 30px rgba(0, 255, 0, 0.5))
+    drop-shadow(0 0 50px rgba(0, 255, 0, 0.4));
+  transition: filter 0.3s ease;
+}
+
 /* ========== Utility ========== */
 .hidden {
   display: none;
