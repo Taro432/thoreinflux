@@ -32,18 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitSound      = document.getElementById('submit-sound');
 
   if (guestbookForm) {
-  guestbookForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    guestbookMessage.classList.remove('hidden');
-    guestbookForm.reset();
-    submitSound?.play().catch(err =>
-      console.warn('Guestbook sound playback failed:', err)
-    );
-    setTimeout(() => {
-      guestbookMessage.classList.add('hidden');
-    }, 5000);
-  });
-}
+    guestbookForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      guestbookMessage.classList.remove('hidden');
+      guestbookForm.reset();
+      submitSound?.play().catch(err =>
+        console.warn('Guestbook sound playback failed:', err)
+      );
+      setTimeout(() => {
+        guestbookMessage.classList.add('hidden');
+      }, 5000);
+    });
+  }
 
   // ===== Contact Form =====
   const contactForm = document.getElementById('contact-form');
@@ -150,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return new Promise(resolve => {
       let i = 0;
       const span = document.createElement("p");
-      // >>>>> Ergänzung für gleichmäßiges Verhalten:
       span.style.width = "100%";
       span.style.margin = "0";
       span.style.whiteSpace = "pre";
@@ -209,4 +208,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ===== Portfolio Image Popup =====
+  const projects = document.querySelectorAll(".project-img");
+  const popup = document.getElementById("popup-window");
+  const popupImg = document.getElementById("popup-img");
+  const popupClose = document.getElementById("popup-close");
+
+  projects.forEach(project => {
+    project.addEventListener("click", () => {
+      popupImg.src = project.src;
+      popup.classList.remove("hidden");
+      popup.classList.add("show");
+    });
+  });
+
+  const closePopup = () => {
+    popup.classList.remove("show");
+    setTimeout(() => popup.classList.add("hidden"), 300);
+  };
+
+  popupClose.addEventListener("click", closePopup);
+  popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      closePopup();
+    }
+  });
 });
